@@ -2,6 +2,7 @@ plugins {
     id("com.android.application")
     id("kotlin-android")
     id("kotlin-kapt")
+    id("com.google.gms.google-services")
 //    id("androidx.navigation.safeargs")
 }
 
@@ -47,6 +48,7 @@ android {
 }
 
 dependencies {
+
     // default
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
@@ -76,6 +78,8 @@ dependencies {
     // RxJava2
     implementation("io.reactivex.rxjava2:rxjava:$rxJavaVersion")
     implementation("io.reactivex.rxjava2:rxandroid:$rxJavaVersion")
+    implementation("com.google.firebase:firebase-auth-ktx:21.0.1")
+    implementation("com.google.firebase:firebase-database-ktx:20.0.3")
     // Tests
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
@@ -110,4 +114,5 @@ dependencies {
 //    implementation("com.google.firebase:firebase-config-ktx")
 //    implementation("com.google.android.gms:play-services-auth:19.2.0")
 //    implementation("com.facebook.android:facebook-android-sdk:[4,5]")
+
 }

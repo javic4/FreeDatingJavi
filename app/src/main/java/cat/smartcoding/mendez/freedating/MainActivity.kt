@@ -3,55 +3,51 @@ package cat.smartcoding.mendez.freedating
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
-import androidx.drawerlayout.widget.DrawerLayout
-import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
 import cat.smartcoding.mendez.freedating.databinding.ActivityMainBinding
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 
-/*
-*
-* Application Features:
-Matches
-Hot or Not
-Profile Guests
-Profile Likes
-Gifts
-Profile Photo/Cover
-Profile Information
-People Nearby
-Search users
-Friends System
-Upgrades (Ghost Mode | Verified Badge | Off Ads)
-In-app purchases
-Credits – Virtual currency
-Simple Gallery
-Blocked List
-Direct Messages with images/photos (Real time)
-Submitting tickets to support from application
-Abuse reports to photos and users
-Facebook login|sign up|connect|disconnect
-Support Emoji in photos comments, gifts comments and messages.
-Profile photo and cover
-Push notifications about profile likes, gifts, messages, friend requests and accept friend request
-Personalize your notifications
-AdMob banner
-Rewarded video Ads
-And much more …
-*
-* */
+/**
+ * A Login Form Example in Kotlin Android
+ */
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        // get reference to all views
+        var et_user_name = findViewById(R.id.et_user_name) as EditText
+        var et_password = findViewById(R.id.et_password) as EditText
+        var btn_reset = findViewById(R.id.btn_reset) as Button
+        var btn_submit = findViewById(R.id.btn_submit) as Button
+
+        btn_reset.setOnClickListener {
+            // clearing user_name and password edit text views on reset button click
+            et_user_name.setText("")
+            et_password.setText("")
+        }
+
+        // set on-click listener
+        btn_submit.setOnClickListener {
+            val user_name = et_user_name.text;
+            val password = et_password.text;
+            Toast.makeText(this@MainActivity, user_name, Toast.LENGTH_LONG).show()
+
+            // your code to validate the user_name and password combination
+            // and verify the same
+
+        }
+    }
+}
+
+//Acaba sigin
+private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+    /*override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -85,8 +81,8 @@ class MainActivity : AppCompatActivity() {
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
         bottomNavigationView.setupWithNavController(navController)
     }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+*/
+    /* override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
@@ -105,5 +101,4 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
-
-}
+*/
