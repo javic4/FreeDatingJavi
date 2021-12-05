@@ -80,6 +80,7 @@ dependencies {
     implementation("io.reactivex.rxjava2:rxandroid:$rxJavaVersion")
     implementation("com.google.firebase:firebase-auth-ktx:21.0.1")
     implementation("com.google.firebase:firebase-database-ktx:20.0.3")
+    implementation("com.google.firebase:firebase-auth:21.0.1")
     // Tests
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
