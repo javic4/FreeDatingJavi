@@ -62,11 +62,12 @@
             android:padding="25dp"
             android:orientation="horizontal">
             <Button
-                android:id="@+id/btn_reset"
-                android:text="Reset"
+                android:id="@+id/btn_Alta"
+                android:text="Register"
                 android:textAllCaps="false"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:onClick="register"/>
             <Button
                 android:id="@+id/btn_submit"
                 android:text="Submit"
